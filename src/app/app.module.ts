@@ -1,7 +1,5 @@
-import { MegaMenuModule } from 'primeng/megamenu';
 import { MultiSelectModule } from 'primeng/multiselect';
-
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormsModule } from '@angular/forms';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
@@ -10,6 +8,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,15 +18,16 @@ import { HomeComponent } from './pages/home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ButtonModule,
     MenubarModule,
     DropdownModule,
-    MegaMenuModule,
-    MultiSelectModule
+    MultiSelectModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, HomeComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
