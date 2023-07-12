@@ -1,3 +1,6 @@
+import { MegaMenuModule } from 'primeng/megamenu';
+import { MultiSelectModule } from 'primeng/multiselect';
+
 import { FormGroup } from '@angular/forms';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
@@ -19,11 +22,12 @@ import { HomeComponent } from './pages/home/home.component';
     ButtonModule,
     MenubarModule,
     DropdownModule,
+    MegaMenuModule,
+    MultiSelectModule
 
   ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  
 })
 export class AppModule { }
