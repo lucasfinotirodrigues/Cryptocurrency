@@ -10,12 +10,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './pages/navbar/navbar.component';
+import { CoinListComponent } from './pages/coin-list/coin-list.component';
+import { CoinDetailComponent } from './pages/coin-detail/coin-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    CoinListComponent,
+    CoinDetailComponent
   ],
   imports: [
     BrowserModule,
