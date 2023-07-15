@@ -1,6 +1,58 @@
-.p-menubar
-{
-  background: transparent;
-  position: relative;
-  top: 0
+.masthead {
+  text-align: center;
+  background-image: url("../../../assets/background.jpg");
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 89.5vh;
+  padding-top: 10rem;
+  padding-bottom: 12.5rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  h4 {
+    font-size: 60px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  h5 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  button {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #FF9400;
+    border: none;
+    width: 260px;
+    height: 40px;
+    border-radius: 50px;
+
+    &:hover {
+      background-color: #dd8100;
+      transition: 0.3s;
+    }
+  }
+}
+
+// Responsividade
+@media screen and (max-width: 520px) {
+
+  h4 {
+    font-size: 28px !important;
+  }
+
+  h5 {
+    font-size: 16px !important;
+  }
 }
