@@ -1,10 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/service/service/api.service';
 
 @Component({
   selector: 'app-coin-list',
   templateUrl: './coin-list.component.html',
   styleUrls: ['./coin-list.component.scss']
 })
-export class CoinListComponent {
+export class CoinListComponent implements OnInit {
 
+  bannerData: any = [];
+
+  constructor(
+    private api: ApiService
+    ){
+
+  }
+
+  ngOnInit(): void{
+    this.getAllData();
+    this.getBannerData();
+  }
+
+  getBannerData(){
+    this.api.getTrendingCurrency("INR")
+    .subscribe(res => {
+      console.warn(res, "BannerData");
+      this.bannerData
+    })
+  }
+  getAllData(){
+    this.api.getCurrency("INR")
+    .subscribe(res =>{
+      console.warn(res, 'All Data')
+    })
+  }
 }

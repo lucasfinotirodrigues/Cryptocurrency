@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { CoinListComponent } from './pages/coin-list/coin-list.component';
 import { CoinDetailComponent } from './pages/coin-detail/coin-detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CoinDetailComponent } from './pages/coin-detail/coin-detail.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     ButtonModule,
