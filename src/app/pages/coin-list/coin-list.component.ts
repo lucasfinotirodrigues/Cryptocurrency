@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/service/service/api.service';
 
@@ -11,27 +12,30 @@ export class CoinListComponent implements OnInit {
   bannerData: any = [];
 
   constructor(
-    private api: ApiService
-    ){
+    private api: ApiService,
+    private http: HttpClient
+  ) {
 
   }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.getAllData();
     this.getBannerData();
   }
 
-  getBannerData(){
+  getBannerData() {
     this.api.getTrendingCurrency("INR")
-    .subscribe(res => {
-      console.warn(res, "BannerData");
-      this.bannerData
-    })
+      .subscribe(res => {
+        console.warn(res, "BannerData");
+      })
   }
-  getAllData(){
+  getAllData() {
     this.api.getCurrency("INR")
-    .subscribe(res =>{
-      console.warn(res, 'All Data')
-    })
+      .subscribe(res => {
+        console.warn(res, 'All Data')
+        this.bannerData = res
+      })
   }
 }
+
+      // 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Ctether%2Cethereum%2Clitecoin%2Ccardano%2Cdogecoin&vs_currencies=usd&include_24hr_change=true';

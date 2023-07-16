@@ -11,6 +11,14 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
+
+
+
+  // Pegando o valor atual da criptomoeda
+  getCurrentCurrency(currency: string){
+    return this.http.get<any>(` https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Ctether%2Cethereum%2Clitecoin%2Ccardano%2Cdogecoin&vs_currencies=usd&include_24hr_change=true`);
+  }
+
   // Pegando a criptomoeda
   getCurrency(currency: string) {
     return this.http.get<any>(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&sparkline=false`);

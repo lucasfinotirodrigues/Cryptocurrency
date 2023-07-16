@@ -13,6 +13,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { CoinListComponent } from './pages/coin-list/coin-list.component';
 import { CoinDetailComponent } from './pages/coin-detail/coin-detail.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    TableModule,
     FormsModule,
     ButtonModule,
     MenubarModule,
