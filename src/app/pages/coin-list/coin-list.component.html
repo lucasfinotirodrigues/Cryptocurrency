@@ -1,54 +1,61 @@
 <!--Importando o navbar-->
 <app-navbar></app-navbar>
 
-<div class="card">
-  <p-table #dt1 selectionMode="single" dataKey="id" [tableStyle]="{'min-width': '50rem'}" [rows]="10" [paginator]="true"
-    [value]="bannerData" stateStorage="session" stateKey="statedemo-session">
-    <ng-template pTemplate="header">
-      <tr>
-        <th pSortableColumn="status" style="width:20%">
-          Logo
-          <p-sortIcon field="status"></p-sortIcon>
-        </th>
-        <th pSortableColumn="item.name" style="width:20%">
-          Criptomoeda
-          <p-sortIcon field="item.name"></p-sortIcon>
-        </th>
-        <th pSortableColumn="country.name" style="width:20%">
-          Preço em Dolar
-          <p-sortIcon field="country.name"></p-sortIcon>
-        </th>
-        <th pSortableColumn="status" style="width:20%">
-          Preço em Real
-          <p-sortIcon field="status"></p-sortIcon>
-        </th>
+<div class="text-information">
+  <h4>Acredite na nova moeda</h4>
+  <h5>Descubra as Tendências e Flutuações das Principais Criptomoedas do Mercado</h5>
+</div>
 
-        <th pSortableColumn="representative.name" style="width:20%">
-          Alteração em 24horas
-          <p-sortIcon field="representative.name"></p-sortIcon>
-        </th>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-item>
-      <tr>
-        <td>
-          <img width="40px" [src]="item.image" alt="">
-        </td>
-        <td>
-         <span>{{item.name}}</span>
-        </td>
+<div class="content-table">
+  <div class="card">
+    <p-table #dt1 selectionMode="single" dataKey="id" [tableStyle]="{'min-width': '50rem'}" [rows]="10" [paginator]="true"
+      [value]="bannerData" stateStorage="session" stateKey="statedemo-session">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="logo" style="width:20%">
+            Logo
+            <p-sortIcon field="logo"></p-sortIcon>
+          </th>
+          <th pSortableColumn="name" style="width:20%">
+            Moeda
+            <p-sortIcon field="name"></p-sortIcon>
+          </th>
+          <th pSortableColumn="price" style="width:20%">
+            Dolar
+            <p-sortIcon field="country.name"></p-sortIcon>
+          </th>
+          <th pSortableColumn="status" style="width:20%">
+            Real
+            <p-sortIcon field="status"></p-sortIcon>
+          </th>
 
-        <td>
-          <span class="ml-1 vertical-align-middle">{{item.current_price | currency }}</span>
-        </td>
-        <td>
-          <!--Real-->
-          <span class="ml-1 vertical-align-middle">{{item.current_price | currency: 'BRL'}}</span>
-        </td>
-        <td>
-          <span>{{item.market_cap_change_percentage_24h}}</span>
-        </td>
-      </tr>
-    </ng-template>
-  </p-table>
+          <th pSortableColumn="representative.name" style="width:20%">
+            Situação
+            <p-sortIcon field="representative.name"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item>
+        <tr>
+          <td>
+            <img width="40px" [src]="item.image" alt="">
+          </td>
+          <td>
+           <span>{{item.name}}</span>
+          </td>
+
+          <td>
+            <span class="ml-1 vertical-align-middle">{{item.current_price | currency }}</span>
+          </td>
+          <td>
+            <!--Real-->
+            <span class="ml-1 vertical-align-middle">{{item.current_price | currency: 'BRL'}}</span>
+          </td>
+          <td>
+            <span [ngStyle]="{'color': item.market_cap_change_percentage_24h >= 0 ? 'green' : 'red'}">{{item.market_cap_change_percentage_24h }}%</span>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
 </div>
