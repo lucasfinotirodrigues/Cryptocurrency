@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit  {
 
   ngOnInit() {
     this.currency = [
-      { name: 'Rupia Indiana', code: 'INR' },
+      { name: 'Real Brasileiro', code: 'INR' },
       { name: 'Dolar Americano', code: 'USD' }
     ]
   }
