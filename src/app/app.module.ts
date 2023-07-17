@@ -14,6 +14,7 @@ import { CoinListComponent } from './pages/coin-list/coin-list.component';
 import { CoinDetailComponent } from './pages/coin-detail/coin-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { TableModule } from 'primeng/table';
     MenubarModule,
     DropdownModule,
     MultiSelectModule,
+    ChartModule,
     BrowserAnimationsModule
 
   ],
