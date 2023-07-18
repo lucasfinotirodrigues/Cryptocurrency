@@ -8,3 +8,25 @@
   padding: 0;
   font-family: 'Inter', sans-serif;
 }
+
+// Estilização padrão das telas
+
+.text-information{
+  padding: 20px 12px 0 12px;
+
+  h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FF9400;
+  }
+
+  h5 {
+    font-size: 16px;
+    font-weight: 300;
+    color: #6c757d;
+  }
+}
+
+.content-table{
+ padding: 20px 12px
+}
