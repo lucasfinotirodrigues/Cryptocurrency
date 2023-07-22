@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'list', component: CoinListComponent
   },
   {
-    path: 'detail', component: CoinDetailComponent
+    path: 'detail/:id', component: CoinDetailComponent
   }
 ];
 

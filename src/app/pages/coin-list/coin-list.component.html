@@ -3,7 +3,7 @@
 
 <div class="text-information">
   <h4>Acredite na nova moeda</h4>
-  <h5>Descubra as Tendências e Flutuações das Principais Criptomoedas do Mercado</h5>
+  <h5 class="p-0">Descubra as Tendências e Flutuações das Principais Criptomoedas do Mercado</h5>
 </div>
 
 <div class="content-table">
@@ -36,8 +36,8 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-item>
-        <tr>
-          <td>
+        <tr >
+          <td (click)="goToDetails(item)">
             <img width="40px" [src]="item.image" alt="">
           </td>
           <td>

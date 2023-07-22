@@ -1,11 +1,34 @@
 <!--Importando o navbar-->
 <app-navbar></app-navbar>
 <div class="text-information">
-  <h4>Descrição da criptomoeda</h4>
-  <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat eum culpa, at amet eveniet voluptatibus.</h5>
+  <h4 class="m-0">Descrição da criptomoeda</h4>
+  <img width="40px" [src]="coinData?.image?.small" alt="">
 </div>
+<div class="content-information">
+  <h6 [innerHTML]="coinData?.name"></h6>
+  <h5 *ngIf="!showFullDescription">{{ coinData?.description.en.split('.').shift() }}</h5>
+  <h3 *ngIf="!showFullDescription" (click)="showFullDescription = true">Ler mais</h3>
+  <h5 *ngIf="showFullDescription" [innerHTML]="coinData?.description.en"></h5>
+  <h3 *ngIf="showFullDescription" (click)="showFullDescription = false">Ler menos</h3>
+</div>
+<style>
+  p{
+    color: #6c757d;
+    background-color: #F8F9FA;
+    border: 1px solid #c4d4d4;
+    padding: 12px;
+    border-radius: 4px;
+  }
+</style>
+<div class="informations d-flex">
+  <p>Classificação {{coinData?.market_cap_rank}}º</p>
+  <p>Preço atual {{coinData?.market_data.current_price.brl  | currency: 'BRL'}}</p>
+  <p>Valor de mercado {{coinData?.market_data.market_cap.brl  | currency: 'BRL'}}</p>
+</div>
+
 <div class="content-table">
   <div class="card">
     <p-chart type="line" [data]="data" [options]="options"></p-chart>
   </div>
 </div>
+
