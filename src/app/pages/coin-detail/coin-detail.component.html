@@ -11,15 +11,6 @@
   <h5 *ngIf="showFullDescription" [innerHTML]="coinData?.description.en"></h5>
   <h3 *ngIf="showFullDescription" (click)="showFullDescription = false">Ler menos</h3>
 </div>
-<style>
-  p{
-    color: #6c757d;
-    background-color: #F8F9FA;
-    border: 1px solid #c4d4d4;
-    padding: 12px;
-    border-radius: 4px;
-  }
-</style>
 <div class="informations d-flex">
   <p>Classificação {{coinData?.market_cap_rank}}º</p>
   <p>Preço atual {{coinData?.market_data.current_price.brl  | currency: 'BRL'}}</p>
