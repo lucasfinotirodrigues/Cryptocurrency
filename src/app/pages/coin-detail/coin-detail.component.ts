@@ -39,8 +39,8 @@ export class CoinDetailComponent implements OnInit {
       datasets: [
         {
           type: 'line',
-          label: 'Dataset 1',
-          borderColor: documentStyle.getPropertyValue('--blue-500'),
+          label: 'Bitcoin',
+          borderColor: documentStyle.getPropertyValue('--orange-500'),
           borderWidth: 2,
           fill: false,
           tension: 0.4,
